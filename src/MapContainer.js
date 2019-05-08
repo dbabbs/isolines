@@ -18,7 +18,7 @@ class MapContainer extends React.Component {
    handleMarkerDrag = () => {
       const coordinates = this.marker.current.leafletElement.getLatLng();
       const center = [coordinates.lat, coordinates.lng];
-      this.props.handleMarkerDrag(center)
+      this.props.handleMarkerDrag(center);
    }
 
    render() {
@@ -55,7 +55,6 @@ class MapContainer extends React.Component {
                   })
                }
             </Map>
-
          </div>
       )
    }

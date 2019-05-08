@@ -51,7 +51,7 @@ const Sidebar = (props) => {
                </div>
                <lui-checkbox
                   class="lui-small"
-                  onClick={() => props.options.updateOptions(!props.options.traffic, 'traffic')}
+                  onClick={() => props.updateOptions(!props.options.traffic, 'traffic')}
                >
                   <input
                      type="checkbox"
@@ -100,7 +100,14 @@ const Sidebar = (props) => {
                      Math.round(props.options.range / 60) + ' minutes'
                   }
                </p>
-               <input onChange={props.updateRange} type="range" min="1" max={props.max} value={props.sliderVal} className="slider" id="" />
+               <input
+                  onChange={props.updateRange}
+                  type="range"
+                  min={1}
+                  max={props.max}
+                  value={props.sliderVal}
+                  className="slider"
+               />
             </div>
             <div className="section subtitle">
                <div>

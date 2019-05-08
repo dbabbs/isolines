@@ -30,7 +30,7 @@ class App extends React.Component {
          type: 'distance',
          traffic: false,
          zoom: 12
-      }
+      };
    }
 
    updateIsolines = () => {
@@ -53,26 +53,26 @@ class App extends React.Component {
       })
    }
 
-   handleMapMove = (zoom) => this.setState({ zoom })
+   handleMapMove = (zoom) => this.setState({ zoom });
 
    componentDidMount = () => this.updateIsolines();
 
-   handleMarkerDrag = (center) => this.setState({ center }, () => this.updateIsolines())
+   handleMarkerDrag = (center) => this.setState({ center }, () => this.updateIsolines());
 
    updateOptions = (value, cat) => {
       if (cat === 'type' && this.state.range > maxIsolineRangeLookup[value]) {
          this.setState({
             range: maxIsolineRangeLookup[value]
-         })
+         });
       }
       this.setState({
          [cat]: value
-      }, () => this.updateIsolines())
+      }, () => this.updateIsolines());
    }
 
    updateRange = evt => {
       let range = evt.target.value;
-      this.setState({ range }, () => this.updateIsolines())
+      this.setState({ range }, () => this.updateIsolines());
    }
 
 
