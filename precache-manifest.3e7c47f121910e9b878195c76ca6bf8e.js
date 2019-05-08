@@ -16,7 +16,7 @@ self.__precacheManifest = [
     "url": "/isolines/static/css/main.784e525c.chunk.css"
   },
   {
-    "revision": "f4beced074fabbccc7f6d7f2cebc102e",
+    "revision": "2d7e681cf99748f0ee86bb218237f7ad",
     "url": "/isolines/index.html"
   }
 ];
