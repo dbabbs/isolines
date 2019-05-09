@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import { hereIsolineUrl, maxIsolineRangeLookup } from './here';
+import { hereIsolineUrl, maxIsolineRangeLookup, hereGeocodeUrl } from './here';
 
 import Sidebar from './Sidebar';
 import MapContainer from './MapContainer';
@@ -17,47 +17,41 @@ class App extends React.Component {
       this.map = React.createRef();
 
       this.state = {
-         isolines:[
-            { color: '#41D38D', shape: [] },
-            { color: '#47D59C', shape: [] },
-            { color: '#4BD6A4', shape: [] },
-            { color: '#52D8B6', shape: [] },
-            { color: '#5DDCCF', shape: [] }
-         ],
+         color: '#5DDCCF',
+         shape: [],
          center: [47.605779, -122.315744],
          mode: 'car',
          range: 10000,
          type: 'distance',
          traffic: false,
-         zoom: 12
+         zoom: 12,
+         searchValue: 'Seattle'
       };
    }
 
-   updateIsolines = () => {
-      const promises = this.state.isolines.map((m,i) => {
-         const range = Math.round( i / this.state.isolines.length * this.state.range );
-         return fetch(hereIsolineUrl(this.state, range))
-            .then(x => x.json())
-      });
+   updateIsoline = () => {
+      console.log('updating isoline..')
+      fetch(hereIsolineUrl(this.state))
+      .then(res => res.json())
+      .then(res => {
+         if (res.response.isoline[0].component.length > 0) {
+            console.log('serach..')
+            const shape = res.response.isoline[0].component[0].shape.map(x => [x.split(',')[0], x.split(',')[1]]);
 
-      Promise.all(promises).then(res => {
-         const isolines = this.state.isolines.map((x, i) => {
-            if (res[i].response.isoline[0].component.length > 0) {
-               x.shape = res[i].response.isoline[0].component[0].shape.map(x => [x.split(',')[0], x.split(',')[1]]);
-            } else {
-               x.shape = [];
-            }
-            return x;
-         })
-         this.setState({ isolines });
+            console.log(shape);
+            this.setState({ shape })
+         } else {
+            const shape = [];
+            this.setState({ shape })
+         }
       })
    }
 
    handleMapMove = (zoom) => this.setState({ zoom });
 
-   componentDidMount = () => this.updateIsolines();
+   componentDidMount = () => this.updateIsoline();
 
-   handleMarkerDrag = (center) => this.setState({ center }, () => this.updateIsolines());
+   handleMarkerDrag = (center) => this.setState({ center }, () => this.updateIsoline());
 
    updateOptions = (value, cat) => {
       if (cat === 'type' && this.state.range > maxIsolineRangeLookup[value]) {
@@ -67,14 +61,13 @@ class App extends React.Component {
       }
       this.setState({
          [cat]: value
-      }, () => this.updateIsolines());
+      }, () => this.updateIsoline());
    }
 
    updateRange = evt => {
       let range = evt.target.value;
-      this.setState({ range }, () => this.updateIsolines());
+      this.setState({ range }, () => this.updateIsoline());
    }
-
 
    render() {
       const max = this.state.type === 'distance' ?
@@ -93,7 +86,8 @@ class App extends React.Component {
                   options={this.state}
                />
                <MapContainer
-                  isolines={this.state.isolines}
+                  color={this.state.color}
+                  isoline={this.state.shape}
                   center={this.state.center}
                   zoom={this.state.zoom}
                   handleMapMove={this.handleMapMove}

@@ -5,6 +5,7 @@ import '@lui/init/dist/lui-init.min'
 import '@lui/here-layer-theme/dist/lui-here-layer-theme.min'
 import '@lui/radiobutton/dist/lui-radiobutton.min'
 import '@lui/checkbox/dist/lui-checkbox.min'
+import '@lui/textfield/dist/lui-textfield.min'
 
 const Sidebar = (props) => {
 
@@ -110,10 +111,6 @@ const Sidebar = (props) => {
                />
             </div>
             <div className="section subtitle">
-               <div>
-                  Each step of the isoline represents 1/5 of the total range.
-               </div>
-               <br/>
                <div>HERE Routing Isoline {' '}
                   <a href="https://developer.here.com/documentation/routing/topics/request-isoline.html">
                      documentation

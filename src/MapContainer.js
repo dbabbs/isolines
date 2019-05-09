@@ -41,19 +41,12 @@ class MapContainer extends React.Component {
                   onDragEnd={this.handleMarkerDrag}
                   ref={this.marker}
                />
-               {
-                  this.props.isolines.map((isoline, i) => {
-                     return (
-                        <Polygon
-                           key={i}
-                           fillOpacity={0.05}
-                           weight={2}
-                           positions={isoline.shape}
-                           color={isoline.color}
-                        />
-                     )
-                  })
-               }
+               <Polygon
+                  fillOpacity={0.05}
+                  weight={2}
+                  positions={this.props.isoline}
+                  color={this.props.color}
+               />
             </Map>
          </div>
       )
