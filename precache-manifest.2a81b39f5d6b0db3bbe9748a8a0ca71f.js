@@ -4,19 +4,19 @@ self.__precacheManifest = [
     "url": "/isolines/static/js/runtime~main.5af3d94e.js"
   },
   {
-    "revision": "cb70b30102e0fd5069a8",
-    "url": "/isolines/static/js/main.cb70b301.chunk.js"
+    "revision": "8f897f08ecac0df8a3f0",
+    "url": "/isolines/static/js/main.8f897f08.chunk.js"
   },
   {
     "revision": "baac6c6852edb4e2eb83",
     "url": "/isolines/static/js/1.baac6c68.chunk.js"
   },
   {
-    "revision": "cb70b30102e0fd5069a8",
-    "url": "/isolines/static/css/main.f8ef9237.chunk.css"
+    "revision": "8f897f08ecac0df8a3f0",
+    "url": "/isolines/static/css/main.27c1b0bf.chunk.css"
   },
   {
-    "revision": "c0abf64b0616133962b992e64c3459a5",
+    "revision": "d73ac7c834611a9d5b080c9401e23af3",
     "url": "/isolines/index.html"
   }
 ];
