@@ -21,8 +21,8 @@ class App extends React.Component {
          shape: [],
          center: [47.605779, -122.315744],
          mode: 'car',
-         range: 10000,
-         type: 'distance',
+         range: 1000,
+         type: 'time',
          traffic: false,
          zoom: 12,
          searchValue: 'Seattle'
@@ -30,15 +30,11 @@ class App extends React.Component {
    }
 
    updateIsoline = () => {
-      console.log('updating isoline..')
       fetch(hereIsolineUrl(this.state))
       .then(res => res.json())
       .then(res => {
          if (res.response.isoline[0].component.length > 0) {
-            console.log('serach..')
             const shape = res.response.isoline[0].component[0].shape.map(x => [x.split(',')[0], x.split(',')[1]]);
-
-            console.log(shape);
             this.setState({ shape })
          } else {
             const shape = [];

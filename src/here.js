@@ -8,8 +8,8 @@ const hereIsolineUrl = (options) => `https://isoline.route.api.here.com/routing/
 const hereTileUrl = (style) => `https://2.base.maps.api.here.com/maptile/2.1/maptile/newest/${style}/{z}/{x}/{y}/512/png8?app_id=${hereCredentials.id}&app_code=${hereCredentials.code}&ppi=320`;
 
 const maxIsolineRangeLookup = {
-   time: 5000, //20000?
-   distance: 80000
+   time: 20000, 
+   distance: 500000
 }
 
 export {
