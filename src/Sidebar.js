@@ -5,7 +5,6 @@ import '@lui/init/dist/lui-init.min'
 import '@lui/here-layer-theme/dist/lui-here-layer-theme.min'
 import '@lui/radiobutton/dist/lui-radiobutton.min'
 import '@lui/checkbox/dist/lui-checkbox.min'
-import '@lui/textfield/dist/lui-textfield.min'
 
 const Sidebar = (props) => {
 

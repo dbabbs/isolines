@@ -87,7 +87,7 @@ h1 {
    -webkit-appearance: none;
    appearance: none;
    height: 4px;
-   background: #7D8187;
+   background: #373E46;
    outline: none;
    border-radius: 10px;
 }
@@ -95,8 +95,8 @@ h1 {
 .slider::-webkit-slider-thumb {
    -webkit-appearance: none;
    appearance: none;
-   width: 16px;
-   height: 16px;
+   width: 14px;
+   height: 14px;
    border-radius: 100%;
    background: #2DD5C9;
    cursor: pointer;

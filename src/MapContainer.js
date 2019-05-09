@@ -42,7 +42,7 @@ class MapContainer extends React.Component {
                   ref={this.marker}
                />
                <Polygon
-                  fillOpacity={0.05}
+                  fillOpacity={0.1}
                   weight={2}
                   positions={this.props.isoline}
                   color={this.props.color}

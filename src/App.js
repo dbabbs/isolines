@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import { hereIsolineUrl, maxIsolineRangeLookup, hereGeocodeUrl } from './here';
+import { hereIsolineUrl, maxIsolineRangeLookup } from './here';
 
 import Sidebar from './Sidebar';
 import MapContainer from './MapContainer';
@@ -24,8 +24,7 @@ class App extends React.Component {
          range: 1000,
          type: 'time',
          traffic: false,
-         zoom: 12,
-         searchValue: 'Seattle'
+         zoom: 12
       };
    }
 
