@@ -2,6 +2,13 @@
 
 __[View live demo](https://dbabbs.github.io/isolines)__
 
+__[View the slide deck](isolines.pdf)__
+This deck was presented alongside the demo at Seattle JavaScript meetup.
+
+__[View the live talk](https://dylanbabbs.com/writing/seattle-js-isoline-routing)__
+
+
+
 ![demo](demo.gif)
 
 Example application of the HERE Routing API Isoline feature.
