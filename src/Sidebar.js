@@ -17,7 +17,7 @@ const Sidebar = (props) => {
          <div className="content">
             <div className="section">
                <div className="section-title">
-                  Transporation mode
+                  Transportation mode
                </div>
                <lui-radiobutton-group>
                   <lui-radiobutton
